@@ -23,4 +23,4 @@ Route::get('/', function () {
 Route::get("/series",[serieController::class,'index'])->name('series.series');
 Route::get("/series/criar",[serieController::class,'create'])->name('series.create');
 Route::post("/series/salvar",[serieController::class,'store'])->name('series.store');
-Route::post("/series/destroy/{id}",[serieController::class,'destroy'])->name('series.destroy');
+Route::delete("/series/destroy/{id}",[serieController::class,'destroy'])->name('series.destroy');

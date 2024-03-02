@@ -15,16 +15,12 @@ use App\Http\Controllers\serieController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/ola', function () {
-
-    return "ola";
-    
+    return redirect('/series');
 });
 
 
-Route::get("/series",[serieController::class,'index']);
-Route::get("/series/criar",[serieController::class,'create']);
-Route::post("/series/criar",[serieController::class,'store']);
+
+Route::get("/series",[serieController::class,'index'])->name('series.series');
+Route::get("/series/criar",[serieController::class,'create'])->name('series.create');
+Route::post("/series/salvar",[serieController::class,'store'])->name('series.store');
+Route::post("/series/destroy/{id}",[serieController::class,'destroy'])->name('series.destroy');
